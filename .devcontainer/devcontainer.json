@@ -1,0 +1,23 @@
+{
+    "name": "Deno Sample",
+    "dockerFile": "Dockerfile",
+
+    // Use 'settings' to set *default* container specific settings.json values on container create. 
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+
+    // Add the IDs of extensions you want installed when the container is created in the array below.
+    "extensions": [
+        "denoland.vscode-deno"
+    ],
+    
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [3000],
+
+    // Specifies a command that should be run after the container has been created.
+    "postCreateCommand": "deno cache src/deps.ts",
+        
+    // Comment out the next line to run as root instead.
+    "remoteUser": "deno"
+}
