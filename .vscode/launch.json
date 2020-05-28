@@ -5,10 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "deno",
+            "name": "Deno",
+            "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}/server.js"
+            "cwd": "${workspaceFolder}/src",
+            "runtimeExecutable": "deno",
+            "runtimeArgs": [
+                "run",
+                "--inspect-brk",
+                "-A",
+                "server.ts"
+            ],
+            "port": 9229,
         }
     ]
 }
